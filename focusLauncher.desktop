@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Focus Client
+Comment=Focus Client
+Icon=/usr/share/pixmaps/openbox.png
+Path=/home/astroberry/astroberryAddons
+Exec=/usr/bin/python3 /home/astroberry/astroberryAddons/focusClient.py
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=Education;
