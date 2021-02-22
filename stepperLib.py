@@ -80,7 +80,7 @@ class BYJstepper():
     def setSpeedPc(self, pc):
         # Sets the speed according to the defined max speed
         self.setSpeed(round(pc/100*self.maxSpeed))
-
+        
     def setMaxSpeed(self, max):
         # Sets the maximum speed, used for calculating by percentage
         self.maxSpeed = max

@@ -1,5 +1,5 @@
 # Stepper motor based telescope focuser
-# Dave Hartburn - Febuary 2021
+# Dave Hartburn - February 2021
 #
 # Controls a stepper motor which will drive the focus knob on a Celestron
 # NexStar 90SLT, though could be used for any telescope with the correct
@@ -27,6 +27,7 @@
 #   SSA       *         Single movement anticlockwise
 #   SSC       #         Single movement clockwise
 #   GPOS                Get motor position, returns an integer
+#   GSPD                Get speed (as a percentage)
 #   QUIT                Quit the network client
 #   SQUIT               Quit the server
 #
@@ -37,11 +38,6 @@
 # to worry too much about tracking multiple clients. Incoming commands are placed on a queue
 # as a tuple (string, rtnQueue) the return queue is for any message back or can be None
 # for the likes of the IR remote
-#
-#
-# To Do:
-#  GPOS bug
-
 
 from stepperLib import BYJstepper
 import time
@@ -243,6 +239,11 @@ def networkListen(csock, caddr, cmdQueue):
                 csock.shutdown(2)
                 csock.close()
                 break
+            elif(inStr=="GSPD"):
+                # We keep track of speed locally and getting from the library
+                # will involve a number of calculations based on the cog geometry
+                resp="speed="+str(stepSpeed)
+                csock.sendall(resp.encode('utf-8'))
             else:
                 # Put string on command queue
                 cmdQueue.put((inStr, rtnQueue))
