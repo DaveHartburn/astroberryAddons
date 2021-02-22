@@ -55,7 +55,7 @@ class BYJstepper():
                                     # imposed and can be overridden with setSpeed. Used for
                                     # setting a speed by percentage
         GPIO.setmode(gpioMode)
-        
+
         # Define the step sequences
         self.seq = [
             [GPIO.HIGH, GPIO.LOW, GPIO.HIGH, GPIO.LOW],     # 1010
@@ -85,11 +85,11 @@ class BYJstepper():
         # Sets the maximum speed, used for calculating by percentage
         self.maxSpeed = max
 
-    def resetPosition():
+    def resetPosition(self):
         # Sets the position to zero
         self.position = 0
 
-    def getPosition():
+    def getPosition(self):
         # Return the current position variable
         return self.position
 
