@@ -8,8 +8,6 @@ To Do:
 -----
 
 - Finish focuser
-  - Network enable
-  - Desktop client
   - Blog post
 - Canon DSLR control
 - Relay control / dew heater
@@ -17,6 +15,6 @@ To Do:
 - Move 3d Prints to repository
 - Decouple Adafruit libraries, ensure I've not created a fork
 - First light
-- Finish blog post
+- Finish blog postings & tie together and publish
 - Expand readme
 - Share on astroberry / SGL forums
