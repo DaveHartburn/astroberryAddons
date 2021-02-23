@@ -12,8 +12,7 @@ To Do:
 - Canon DSLR control
 - Relay control / dew heater
 - Case
-- Move 3d Prints to repository
-- Decouple Adafruit libraries, ensure I've not created a fork
+- Tidy Git repository
 - First light
 - Finish blog postings & tie together and publish
 - Expand readme
