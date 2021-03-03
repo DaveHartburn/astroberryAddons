@@ -21,27 +21,4 @@ GPIO.output(RELAY1, GPIO.HIGH)
 GPIO.setup(RELAY2, GPIO.OUT)
 GPIO.output(RELAY2, GPIO.HIGH)
 
-# **************************
-
-rout1=GPIO.LOW
-rout2=GPIO.HIGH
-
-while True:
-	if(rout1==GPIO.LOW):
-		rout1=GPIO.HIGH
-		rout2=GPIO.LOW
-		print("On")
-	else:
-		rout1=GPIO.LOW
-		rout2=GPIO.HIGH		
-		print("Off")
-		
-	GPIO.output(RELAY1, rout1)
-	GPIO.output(RELAY2, rout2)
-	time.sleep(2)
-
-print("Done")
-GPIO.cleanup()	
-	
-# ****************************************************
 
