@@ -1,11 +1,15 @@
 # Basic stepper motor test program, using stepperLib
 # By Dave Hartburn - January 2021
 
+import sys
+# Add parent directory to import path to find stepper library
+sys.path.insert(0, '..')
+import RPi.GPIO as GPIO
 from stepperLib import BYJstepper
 import time
 
-# Define the stepper pins, the mis-ordering is intentional
-stepPins=[29,33,31,35]
+# Define the stepper pins using GPIO numbers, the mis-ordering is intentional
+stepPins=[5,13,6,19]
 # How many steps per revolution does this motor perform?
 SPR=32
 # Steps per output revolution = 32 * 64
@@ -13,7 +17,7 @@ SPOR=2048
 
 print("Stepper test")
 
-stepper = BYJstepper(SPR, stepPins, True)
+stepper = BYJstepper(SPR, stepPins, True, GPIO.BCM)
 
 print("1 turn clockwise at 100%")
 stepper.setSpeedPc(100)

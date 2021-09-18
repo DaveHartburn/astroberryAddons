@@ -369,6 +369,10 @@ while vquit == False:
     if(dispOn==True):
         if(time.time() > dispTime+SOFF):
             blankDisplay(disp)
+     
+    # Stop CPU hogging - should rewrite to make stepper motion threaded        
+    time.sleep(0.01)
+    
 # End of main loop
 print("Quitting focusServer")
 sys.exit()
